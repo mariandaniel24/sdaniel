@@ -1,40 +1,28 @@
 const Statistics = () => {
   return (
-    <div class="statistics-container unselectable">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-4 col-sm-3 col-md-3 col-lg-2 spacing">
-            <div class="stats-box">
-              <div class="stats-icon">
-                <i class="fa fa-clock-o" aria-hidden="true" />
+    <div className="statistics-container unselectable">
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-4 col-sm-3 col-md-3 col-lg-2 spacing">
+            <div className="stats-box">
+              <div className="stats-icon">
+                <i className="fa fa-clock-o" aria-hidden="true" />
               </div>
-              <div class="stats-info">
+              <div className="stats-info">
                 <p>
-                  <span>500</span> @lang('statistics.hours')
+                  <span>500</span> 2000
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-4 col-sm-3 col-md-3 col-lg-2 spacing">
-            <div class="stats-box">
-              <div class="stats-icon">
-                <i class="fa fa-coffee" aria-hidden="true" />
+          <div className="col-4 col-sm-3 col-md-3 col-lg-2 spacing">
+            <div className="stats-box">
+              <div className="stats-icon">
+                <i className="fa fa-users" aria-hidden="true" />
               </div>
-              <div class="stats-info">
+              <div className="stats-info">
                 <p>
-                  <span>100</span> @lang('statistics.coffees')
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 col-sm-3 col-md-3 col-lg-2 spacing">
-            <div class="stats-box">
-              <div class="stats-icon">
-                <i class="fa fa-users" aria-hidden="true" />
-              </div>
-              <div class="stats-info">
-                <p>
-                  <span>20</span> @lang('statistics.clients')
+                  <span>20</span> clients
                 </p>
               </div>
             </div>

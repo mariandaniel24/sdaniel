@@ -1,7 +1,9 @@
 import React from "react";
 import App, { Container } from "next/app";
 import "bootstrap-4-grid/scss/grid.scss";
+
 import "../styles/main.scss";
+
 
 
 class MyApp extends App {

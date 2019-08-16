@@ -13,6 +13,32 @@
 @import "./about";
 @import "./contact";
 @import "./footer";
+
+
+
+
+
+// importing bulma modal
+
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+@import "~bulma/sass/utilities/derived-variables";
+@import "~bulma/sass/utilities/mixins.sass";
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/components/modal.sass";
+
+
+$transition-duration: .3s;
+$transition-duration-newsPaper: .7s;
+$transition-duration-3dslit: .5s;
+$modal-perspective: 1300px;
+$modal-bg-color: rgba($black,.86);
+// $modal-bg-color: rgba(255, 255, 255,.86);
+
+@import "~bulma-modal-fx/src/_scss/components/_modal-fx.scss";
+
+
+
 html,
 body {
   font-size: 18px;

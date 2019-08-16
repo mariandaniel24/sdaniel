@@ -1,32 +1,32 @@
 const Footer = () => {
   return (
-    <footer class="footer footer-bg">
-      <div class="footer-box">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3 text-center">
-              <p class="footer-text">@lang('social_media')</p>
-              <ul class="social-list">
+    <footer className="footer footer-bg">
+      <div className="footer-box">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-xs-6 col-sm-4 col-md-4 col-lg-3 text-center">
+              <p className="footer-text">@lang('social_media')</p>
+              <ul className="social-list">
                 <li>
                   <a href="#">
-                    <i class="fa fa-twitter" aria-hidden="true" />
+                    <i className="fa fa-twitter" aria-hidden="true" />
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fa fa-github" aria-hidden="true" />
+                    <i className="fa fa-github" aria-hidden="true" />
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fa fa-facebook" aria-hidden="true" />
+                    <i className="fa fa-facebook" aria-hidden="true" />
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="copyright-box">
-            <p class="footer-text">@lang('footer.copyright')</p>
+          <div className="copyright-box">
+            <p className="footer-text">@lang('footer.copyright')</p>
           </div>
         </div>
       </div>
