@@ -2,6 +2,15 @@
   min-height: 1500px;
 }
 
+.modal-close-button {
+  cursor: pointer;
+  font-size: 25px;
+padding: 8px;
+  font-family: "Roboto";
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+}
+
 .projects-row {
   display: flex;
   flex-wrap: wrap;
@@ -13,7 +22,7 @@
     &:first-child {
       width: 100%;
     }
-    
+
     &:not(:first-child) {
       // max-width: 100px;
       // max-height: 100px;

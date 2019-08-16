@@ -150,8 +150,21 @@ const projectsList = [
 
 class Portfolio extends React.Component {
   state = {
-    currentActiveProject: 0
-  }
+    currentActiveProject: 0,
+    isModalActive: false
+  };
+
+  openModal = e => {
+    // console.log("open modal");
+    const id = e.currentTarget.dataset.project;
+    // console.log(id);
+    this.setState({ currentActiveProject: id, isModalActive: true });
+  };
+
+  closeModal = () => {
+    this.setState({ isModalActive: false });
+  };
+
   render() {
     return (
       <section id="portfolio" className="section ">
@@ -165,10 +178,9 @@ class Portfolio extends React.Component {
             <br />
             <br />
             <div className="projects-container">
-              {/* @foreach($portfolio_data as $project) */}
               {projectsList.map((project, i) => {
                 return (
-                  <div data-izimodal-open={`#body-modal-${project.id}`} id={`button-modal-${project.id}`} className="project">
+                  <div className="project" data-project={i} onClick={this.openModal}>
                     <div className="project-box shadow-1">
                       <div className="project-heading shadow-6">
                         <h4>{project.title} </h4>
@@ -187,7 +199,13 @@ class Portfolio extends React.Component {
                 );
               })}
 
-              <ProjectModal isModalActive={ true} project={projectsList[this.state.currentActiveProject]} />
+              {this.state.isModalActive && (
+                <ProjectModal
+                  project={projectsList[this.state.currentActiveProject]}
+                  isModalActive={this.state.isModalActive}
+                  closeModal={this.closeModal}
+                />
+              )}
 
               {/* foreach end */}
             </div>

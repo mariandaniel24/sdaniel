@@ -92,7 +92,7 @@ class Navbar extends React.Component {
                 <li>
                   <a
                     data-nav="true"
-                    className={`${navLinkClassNames} ${isLinkActive ? "active" : ""}`}
+                    className={`${navLinkClassNames}`}
                     onClick={this.props.scrollToPage}
                     name={navLink.href}
                   >

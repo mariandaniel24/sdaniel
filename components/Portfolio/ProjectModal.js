@@ -1,8 +1,18 @@
 import FsLightbox from "fslightbox-react";
 class Modal extends React.Component {
   state = {
-    toggler: false
-  }
+    toggler: false,
+    sourceIndex: 0
+  };
+  openFancyBox = e => {
+    const sourceIndex = parseInt(e.currentTarget.dataset.id) || 0;
+    this.setState(prevState => {
+      return {
+        toggler: !prevState.toggler,
+        sourceIndex
+      };
+    });
+  };
   render() {
     const modalClassNames = this.props.isModalActive ? "is-active" : "";
     return (
@@ -11,26 +21,21 @@ class Modal extends React.Component {
         <div className="modal-card">
           <header className="modal-card-head">
             <p className="modal-card-title">{this.props.project.title}</p>
-            <button className="delete" aria-label="close" />
+            <a className="modal-close-button" onClick={this.props.closeModal}>
+              X
+            </a>
           </header>
-          <FsLightbox
-            toggler={this.state.toggler}
-            sources={[
-              "https://i.imgur.com/fsyrScY.jpg",
-              "https://www.youtube.com/watch?v=xshEZzpS4CQ",
-              "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-            ]}
-          />
+          <FsLightbox toggler={this.state.toggler} sourceIndex={this.state.sourceIndex} sources={[...this.props.project.images]} type="image" />
           <section className="modal-card-body">
             <div className="container">
               <div className="row">
                 <div className="col-md-7 modal-images-box">
                   <div className="projects-row">
-                    {this.props.project.images.map(img => {
+                    {this.props.project.images.map((img, i) => {
                       return (
                         <div className="project-box">
                           <div className="modal-main-image-box shadow-6">
-                            <a href={img} className="zoom-link">
+                            <a className="zoom-link" onClick={this.openFancyBox} data-id={i}>
                               <img
                                 className="img-responsive modal-main-image shadow-1"
                                 src={img}
@@ -44,7 +49,7 @@ class Modal extends React.Component {
                   </div>
 
                   <p className="text-center">
-                    <i className="fa fa-search" /> Click to zoom in
+                    <i className="fa fa-search" /> Click on images to zoom in
                   </p>
                 </div>
                 <div className="col-md-5 align-content-sm-start">
